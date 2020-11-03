@@ -51,7 +51,6 @@ ol, ul {
 }
 .header-search {
     grid-area: search;
-    margin-left: 170px;
 }
 
 .Layout__Content {
@@ -74,13 +73,12 @@ ol, ul {
     text-align: center;
 }
 
-
 .Layout__Wrapper {
     display: grid;
     grid-template-columns: 25% 25% 25% 25% ;
     grid-template-rows: auto;
     grid-template-areas:
-        "header header header header"
+        "header search search ."
         ". main main ."
         "footer footer footer footer";
 }
