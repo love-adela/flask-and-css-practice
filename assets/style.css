@@ -25,27 +25,10 @@ ol, ul {
     padding: 0;
 }
 
-.flex {
-    display: flex;
-}
-
-
-.flex-none {
-    -webkit-box-flex: 0;
-    flex:none;
-}
-
-.flex-column {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    flex-direction: column;
-}
-
 .Post__title {
     color: #5C6BC0;
 
 }
-
 .Post__subtitle {
     font-weight: 100;
     color: #323440;
@@ -59,42 +42,45 @@ ol, ul {
     color: #5C6BC0;
 }
 
+.header-name {
+    grid-area: header;
+}
+
 .header-name > h1 {
     font-weight: 900;
 }
 .header-search {
+    grid-area: search;
     margin-left: 170px;
-}
-
-.Layout__Column {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 820px;
-    margin: 0px auto;
-    padding: 24px;
 }
 
 .Layout__Content {
-    margin-top: 80px;
-    margin-left: 170px;
+    grid-area: main;
 }
 
 .Post__Wrapper {
-    padding: 24px;
     list-style-type: none;
     border-radius: 10px;
     transition: background-color 0.2s ease;
 }
 
 .Post__tags {
-    
+    list-style-type: none;
 }
 
 /* footer */
 .Footer__App {
+    grid-area: footer;
     text-align: center;
-    max-width: 820px;
-    margin: 40px auto;
 }
 
+
+.Layout__Wrapper {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25% ;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header header"
+        ". main main ."
+        "footer footer footer footer";
+}
