@@ -10,7 +10,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://adela.love">
         <meta property="og:description" content="아델라의 블로그입니다.">
-        <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/style.css') }}">
     </head>
     <body>
         <div class="Layout__Wrapper">
@@ -20,8 +20,8 @@
                 </div>
             </div>
             <div class="header-search Nav__Item">
-                <label>검색<input type="text" id="search" placeholder="게시물 검색은 여기에"></label>
-                <form method="post" name="header_search"></form>
+                <label><input type="search" id="h-search" placeholder="게시물 검색은 여기에"></label>
+                <button id="hs-b">검색</button>
             </div>
             <div class="Layout__Content">
                 <ol class="Post__list">
