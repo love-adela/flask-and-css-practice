@@ -2,16 +2,46 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
         <title>아델라의 블로그</title>
-        <meta property="og:title" content="    Blog for Adela" />
-        <meta property="og:type" content="w    ebsite" />
-        <meta property="og:url" content="ht    tp://adela.love">
-        <meta property="og:description" con    tent="아델라의 블로그입니다.">
-        <link rel="stylesheet" href="assets    /style.css">
+        <meta property="og:title" content="Blog for Adela" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://adela.love">
+        <meta property="og:description" content="아델라의 블로그입니다.">
+        <link rel="stylesheet" href="assets/style.css">
     </head>
     <body>
-        <div class="flex">
-            <header class="headerapp"></header>
+        <div class="Layout__Wrapper flex flex-column">
+            <header class="header flex-none">
+                <nav class="center flex flex-row flex-nowrap items-center justify-between relative">
+                    <div class="Nav__Item header-name">
+                        <h1><a href="">love_adela</a></h1>
+                    </div>
+                    <div class="Nav__Item header-search">
+                        <label>검색<input type="text" id="search" placeholder="게시물 검색은 여기에"></label>
+                        <form method="post" name="header_search"></form>
+                    </div>
+                </nav>
+            </header>
+            <div class="Layout__Content flex flex-column">
+                <ol class="Post__list">
+                    <li class="Post__Wrapper">
+                        <a class="" href="#">
+                            <h2 class="Post__title">논리회로에서 음수 표현하기</h2>
+                            <small class="Post__date">2020-11-03</small>
+                            <h4 class="Post__subtitle">MSB의 값에 따라 양수와 음수를 표현할 수 있다.</h4>
+                            <ul class="Post__tags">
+                                <li>#ComputerScience</li>
+                            </ul>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+            <footer class="Footer__App flex-none overflow-x-hidden">
+                <h3>Copyright ©love_adela. All Rights Reserved.</h3>
+            </footer>
         </div>
     </body>
 </html>
