@@ -13,19 +13,17 @@
         <link rel="stylesheet" href="assets/style.css">
     </head>
     <body>
-        <div class="Layout__Wrapper flex flex-column">
-            <header class="header flex-none">
-                <nav class="center flex flex-row flex-nowrap items-center justify-between relative">
-                    <div class="Nav__Item header-name">
-                        <h1><a href="">love_adela</a></h1>
-                    </div>
-                    <div class="Nav__Item header-search">
-                        <label>검색<input type="text" id="search" placeholder="게시물 검색은 여기에"></label>
-                        <form method="post" name="header_search"></form>
-                    </div>
-                </nav>
-            </header>
-            <div class="Layout__Content flex flex-column">
+        <div class="Layout__Wrapper">
+            <div class="header-name Nav__Item">
+                <div>
+                    <h1><a href="">love_adela</a></h1>
+                </div>
+            </div>
+            <div class="header-search Nav__Item">
+                <label>검색<input type="text" id="search" placeholder="게시물 검색은 여기에"></label>
+                <form method="post" name="header_search"></form>
+            </div>
+            <div class="Layout__Content">
                 <ol class="Post__list">
                     <li class="Post__Wrapper">
                         <a class="" href="#">
@@ -39,7 +37,7 @@
                     </li>
                 </ol>
             </div>
-            <footer class="Footer__App flex-none overflow-x-hidden">
+            <footer class="Footer__App">
                 <h3>Copyright ©love_adela. All Rights Reserved.</h3>
             </footer>
         </div>
