@@ -27,16 +27,20 @@
             </div>
             <div class="Layout__Content">
                 <ol class="Post__list">
+                    {% for post_title in post_list %}
                     <li class="Post__Wrapper">
                         <a class="" href="#">
-                            <h2 class="Post__title">논리회로에서 음수 표현하기</h2>
-                            <small class="Post__date">2020-11-03</small>
-                            <h4 class="Post__subtitle">MSB의 값에 따라 양수와 음수를 표현할 수 있다.</h4>
+                            <h2 class="Post__title">{{ post_title }}</h2>
+                            <small class="Post__date">2020-11-03</small> <!-- TODO: 날짜 동기화되게 하기 -->
+                            <h4 class="Post__subtitle">{{ post_subtitle }}</h4>
                             <ul class="Post__tags">
-                                <li>#ComputerScience</li>
+                                {% for tag in tag_list %}
+                                <li>{{ tag }}</li> <!-- TODO: tag 바로 옆에 나열되게 수정하기 -->
+                                {% endfor %}
                             </ul>
                         </a>
                     </li>
+                    {% endfor %}
                 </ol>
             </div>
             <footer class="Footer__App">
