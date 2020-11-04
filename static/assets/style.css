@@ -129,10 +129,11 @@ ol, ul {
 
 .Layout__Wrapper {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25% ;
-    grid-template-rows: 100px 500px auto;
+    grid-template-columns: 25% 50% 25% ;
+    grid-template-rows: 100px auto 100px;
     grid-template-areas:
-        "header search search ."
-        ". main main ."
-        "footer footer footer footer";
+        "header search ."
+        ". main ."
+        "footer footer footer";
+    row-gap: 80px;
 }
