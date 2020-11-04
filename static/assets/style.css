@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Lato&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic:wght@400;700;800&family=Lato&family=Roboto&display=swap');
 
 * {
     box-sizing:border-box;
@@ -6,7 +6,7 @@
 
 body {
     margin: 0;
-    font-family: 'Do Hyeon', 'Roboto', 'Lato', sans-serif;
+    font-family: 'Do Hyeon', 'Nanum Gothic', 'Roboto', 'Lato', sans-serif;
     line-height: 1.15;
 }
 
@@ -23,11 +23,15 @@ ol, ul {
 
 .Post__title {
     color: #5C6BC0;
-    font-size: 36px;
+    font-weight: 900;
+    font-size: 38px;
+    font-family: 'Nanum Gothic';
 
 }
 .Post__subtitle {
     font-weight: 100;
+    font-size: 30px;
+    font-family: 'Nanum Gothic';
     color: #323440;
 }
 
@@ -49,6 +53,7 @@ ol, ul {
 .header-name > h1 {
     font-weight: 900;
 }
+
 .header-search {
     grid-area: search;
     place-self: center stretch;
@@ -97,10 +102,13 @@ ol, ul {
     align-self: center;
 }
 
+
 .Post__Wrapper {
     list-style-type: none;
-    border-radius: 10px;
-    transition: background-color 0.2s ease;
+    border: 8%;
+    /* border-bottom-color: #e1e4e6;
+    border-bottom: 1px solid; */
+    padding: 8% 11% 8%;
 }
 
 .Post__tags {
@@ -112,8 +120,6 @@ ol, ul {
     grid-area: footer;
     place-self: center;
     text-align: center;
-
-
 }
 
 .Footer__App h3 {
