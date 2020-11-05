@@ -105,11 +105,11 @@
                                             <h2 class="Post__title">${title}</h2>
                                             <small class="Post__date">2020-11-03</small>
                                             <h4 class="Post__subtitle">${subtitle}</h4>
-                                            <p>${content}</p>
+                                            <p class="Post__content">${content}</p>
                                         </a>
                                     </li>
                                 </ol>`;
-                $("#post-lc").append(tempHtml);
+                $("#post-lc").prepend(tempHtml);
             }
         
         </script>
