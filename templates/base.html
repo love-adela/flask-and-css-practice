@@ -4,11 +4,14 @@
   <title>{% if title %}{{ title }} | {% endif %}아델라의 블로그</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta property="og:title" content="Blog for Adela" />
+  <meta property="og:title" content="{% if title %}{{ title }}{% else %}Blog for Adela{% endif %}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://adela.love">
-  <meta property="og:description" content="아델라의 블로그입니다.">
-  <link rel="stylesheet" href="{{ url_for('static', filename='assets/style.css') }}">
+  <meta property="og:url" content="https://adela.love">
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}아델라의 블로그입니다.{% endif %}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/base.css') }}">
+  {% if self.style %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/'+self.style().strip()) }}">
+  {% endif %}
 </head>
 
 <div class="Layout__Wrapper">

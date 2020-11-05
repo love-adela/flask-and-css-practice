@@ -1,0 +1,4 @@
+.Layout__Content {
+  grid-area: articles;
+  align-self: center;
+}

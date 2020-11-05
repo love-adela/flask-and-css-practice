@@ -1,0 +1,4 @@
+.Layout__Form {
+  grid-area: form;
+  align-self: center;
+}
