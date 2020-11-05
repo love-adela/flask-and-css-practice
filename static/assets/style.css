@@ -126,18 +126,6 @@ ol, ul {
     list-style-type: none;
 }
 
-/* footer */
-.Footer__App {
-    grid-area: footer;
-    place-self: center;
-    text-align: center;
-}
-
-.Footer__App h3 {
-    color: #323440;
-    font-weight: 100;
-}
-
 .btn-write {
     display: inline-block;
     padding: 13px 18px;
