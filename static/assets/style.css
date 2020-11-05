@@ -168,6 +168,26 @@ ol, ul {
     }
 }
 
+#post-button {
+    display: inline-block;
+    padding: 13px 18px;
+    margin: 0 0.1em 0.1em 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Do Hyeon', 'Roboto', 'Lato', sans-serif;
+    font-size: 17px;
+    color: #FFFFFF;
+    background-color: #5C6BC0; 
+    text-align: center;
+    transition: all 0.2s; 
+}
+
+.form-group {
+    font-family: 'Do Hyeon', 'Nanum Gothic', 'Roboto', 'Lato', sans-serif;
+    font-size: 21px;
+    padding: 30px;
+}
 
 .Layout__Wrapper {
     display: grid;
