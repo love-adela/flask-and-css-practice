@@ -6,23 +6,19 @@ new.css
 
 {% block content %}
 <div class="Layout__Form">
-  <div>
-    <div>
-      <div class="form-group">
-        <label for="title">제목</label>
-        <input id="post-title" type="text" placeholder="">
-      </div>
-      <div class="form-group">
-        <label for="subtitle">내용 요약</label>
-        <textarea id="post-subtitle" type="text" rows="2"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="content">본문</label>
-        <textarea id="post-content" type="text" rows="10"></textarea>
-      </div>
-      <button type="button" class="post-button" onclick="postArticle()" value="execute">게시하기</button>
-    </div>
+  <div class="form-group">
+    <label for="title">제목</label>
+    <input id="post-title" type="text" placeholder="">
   </div>
+  <div class="form-group">
+    <label for="subtitle">내용 요약</label>
+    <textarea id="post-subtitle" type="text" rows="2"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="content">본문</label>
+    <textarea id="post-content" type="text" rows="10"></textarea>
+  </div>
+  <button class="post-button" onclick="postArticle()" value="execute">게시하기</button>
 </div>
 {% endblock %}
 
