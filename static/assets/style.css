@@ -21,23 +21,6 @@ ol, ul {
     padding: 0;
 }
 
-.Post__title {
-    color: #5C6BC0;
-    font-weight: 900;
-    font-size: 38px;
-    font-family: 'Nanum Gothic';
-
-}
-.Post__subtitle {
-    font-weight: 100;
-    font-size: 30px;
-    font-family: 'Nanum Gothic';
-    color: #323440;
-}
-
-.Post__date {
-    color: #808080;
-}
 
 .Nav__Item {
     color: #5C6BC0;
@@ -113,13 +96,45 @@ ol, ul {
     align-self: center;
 }
 
-
 .Post__Wrapper {
     list-style-type: none;
-    border: 8%;
-    /* border-bottom-color: #e1e4e6;
-    border-bottom: 1px solid; */
-    padding: 8% 11% 8%;
+    margin-bottom: 30px;
+    padding: 30px 100px 30px 100px;
+}
+
+.Post__Wrapper:hover {
+    background-color: #fbfbfb;
+    border: 0.16em solid;
+    border-color: #fbfbfb;
+    border-radius: 15px;
+    padding: 30px 100px 30px 100px;
+}
+
+.Post__title {
+    display: flex;
+    -moz-box-align: center;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.Post__title-h {
+    margin-right: 20px;
+    color: #5C6BC0;
+    font-weight: 900;
+    font-size: 30px;
+    font-family: 'Nanum Gothic';
+}
+.Post__subtitle {
+    font-weight: 100;
+    font-size: 26px;
+    font-family: 'Nanum Gothic';
+    color: #323440;
+}
+
+.Post__date {
+    font-size: 17px;
+    color: #808080;
 }
 
 .Post__tags {
