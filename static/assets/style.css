@@ -103,8 +103,13 @@ ol, ul {
     text-align: center;
 }
 
+.Layout__Form {
+    grid-area: form;
+    align-self: center;
+}
+
 .Layout__Content {
-    grid-area: main;
+    grid-area: articles;
     align-self: center;
 }
 
@@ -170,7 +175,8 @@ ol, ul {
     grid-template-rows: 100px auto 100px;
     grid-template-areas:
         "header search write"
-        ". main ."
+        ". form ."
+        ". articles ."
         "footer footer footer";
     row-gap: 80px;
 }
