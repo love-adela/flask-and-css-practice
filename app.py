@@ -9,6 +9,10 @@ db = client.dbBlog
 def index():
     return render_template('index.html')
 
+@app.route('/new')
+def new():
+    return render_template('new.html')
+
 @app.route('/api/article', methods=['GET'])
 def get_articles():
     result = list(db.articles.find({}, {'_id':0}))

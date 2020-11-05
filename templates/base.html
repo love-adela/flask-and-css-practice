@@ -13,15 +13,14 @@
 
 <div class="Layout__Wrapper">
   <div class="header-name Nav__Item">
-    <!-- TODO: Add link -->
-    <h1><a href="">love_adela</a></h1>
+    <h1><a href="{{ url_for('index') }}">love_adela</a></h1>
   </div>
   <div class="header-search Nav__Item">
     <input type="search" id="h-search" placeholder="게시물 검색은 여기에">
     <button id="hs-b">검색</button>
   </div>
   <div class="header-write">
-    <button class="btn-write" onclick="postArticle()">글쓰기</button>
+    <a href="{{ url_for('new') }}"><button class="btn-write">글쓰기</button></a>
   </div>
   {% block content %}
   {% endblock %}
