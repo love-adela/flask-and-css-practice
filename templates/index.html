@@ -90,9 +90,7 @@
                     dataType: 'JSON',
                     contentType: "application/json",
                     success: function (response) {
-                        console.log(response)
                         let articles = response["articles"];
-                        console.log(articles)
                         for (let i=0; i<articles.length; i++) {
                             getPostList(articles[i]["title"], articles[i]["subtitle"], articles[i]["content"])
                         }
