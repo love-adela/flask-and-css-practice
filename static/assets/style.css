@@ -1,220 +1,220 @@
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Gothic:wght@400;700;800&family=Lato&family=Roboto&display=swap');
 
 * {
-    box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 body {
-    margin: 0;
-    font-family: 'Do Hyeon', 'Nanum Gothic', 'Roboto', 'Lato', sans-serif;
-    line-height: 1.15;
+  margin: 0;
+  font-family: 'Do Hyeon', 'Nanum Gothic', 'Roboto', 'Lato', sans-serif;
+  line-height: 1.15;
 }
 
 a {
-    cursor: point;
-    text-decoration: none;
-    color: inherit;
+  cursor: point;
+  text-decoration: none;
+  color: inherit;
 }
 
 ol, ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 
 .Nav__Item {
-    color: #5C6BC0;
+  color: #5C6BC0;
 }
 
 .header-name {
-    grid-area: header;
-    place-self: center stretch;
-    text-align: center;
+  grid-area: header;
+  place-self: center stretch;
+  text-align: center;
 
 }
 
 .header-name > h1 {
-    font-weight: 900;
+  font-weight: 900;
 }
 
 .header-search {
-    grid-area: search;
-    place-self: center stretch;
-    text-align: center;
+  grid-area: search;
+  place-self: center stretch;
+  text-align: center;
 }
 
 #h-search {
-    width: 70%;
-    padding: 15px 22px;
-    margin: 10px 5px;
-    box-sizing: border-box;
-    border: 2px solid #5C6BC0;
-    border-radius: 5px;
+  width: 70%;
+  padding: 15px 22px;
+  margin: 10px 5px;
+  box-sizing: border-box;
+  border: 2px solid #5C6BC0;
+  border-radius: 5px;
 }
 
 #hs-b {
-    display: inline-block;
-    padding: 11px 15px;
-    margin: 0 0.1em 0.1em 0;
-    border-radius: 5px;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Do Hyeon', 'Roboto', 'Lato', sans-serif;
-    font-size: 20px;
-    color: #FFFFFF;
-    background-color: #5C6BC0;
-    text-align: center;
-    transition: all 0.2s;
+  display: inline-block;
+  padding: 11px 15px;
+  margin: 0 0.1em 0.1em 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Do Hyeon', 'Roboto', 'Lato', sans-serif;
+  font-size: 20px;
+  color: #FFFFFF;
+  background-color: #5C6BC0;
+  text-align: center;
+  transition: all 0.2s;
 }
 
 #hs-b:hover {
-    background-color: #FFFFFF;
-    border: 0.16em solid;
-    border-color: #5C6BC0;
-    color: #5C6BC0;
+  background-color: #FFFFFF;
+  border: 0.16em solid;
+  border-color: #5C6BC0;
+  color: #5C6BC0;
 }
 @media all and (max-width:30em){
-    #hs-b{
-        display:block;
-        margin:0.2em auto;
-    }
+  #hs-b{
+    display:block;
+    margin:0.2em auto;
+  }
 }
 
 .header-write {
-    grid-area: write;
-    place-self: center stretch;
-    text-align: center;
+  grid-area: write;
+  place-self: center stretch;
+  text-align: center;
 }
 
 .Layout__Form {
-    grid-area: form;
-    align-self: center;
+  grid-area: form;
+  align-self: center;
 }
 
 .Layout__Content {
-    grid-area: articles;
-    align-self: center;
+  grid-area: articles;
+  align-self: center;
 }
 
 .Post__Wrapper {
-    list-style-type: none;
-    margin-bottom: 30px;
-    padding: 30px 100px 30px 100px;
+  list-style-type: none;
+  margin-bottom: 30px;
+  padding: 30px 100px 30px 100px;
 }
 
 .Post__Wrapper:hover {
-    background-color: #fbfbfb;
-    border: 0.16em solid;
-    border-color: #fbfbfb;
-    border-radius: 15px;
-    padding: 30px 100px 30px 100px;
+  background-color: #fbfbfb;
+  border: 0.16em solid;
+  border-color: #fbfbfb;
+  border-radius: 15px;
+  padding: 30px 100px 30px 100px;
 }
 
 .Post__title {
-    display: flex;
-    -moz-box-align: center;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  -moz-box-align: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .Post__title-h {
-    margin-right: 20px;
-    color: #5C6BC0;
-    font-weight: 900;
-    font-size: 30px;
-    font-family: 'Nanum Gothic';
+  margin-right: 20px;
+  color: #5C6BC0;
+  font-weight: 900;
+  font-size: 30px;
+  font-family: 'Nanum Gothic';
 }
 .Post__subtitle {
-    font-weight: 100;
-    font-size: 26px;
-    font-family: 'Nanum Gothic';
-    color: #323440;
+  font-weight: 100;
+  font-size: 26px;
+  font-family: 'Nanum Gothic';
+  color: #323440;
 }
 
 .Post__date {
-    font-size: 17px;
-    color: #808080;
+  font-size: 17px;
+  color: #808080;
 }
 
 .Post__tags {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .btn-write {
-    display: inline-block;
-    padding: 13px 18px;
-    margin: 0 0.1em 0.1em 0;
-    border-radius: 5px;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Do Hyeon', 'Roboto', 'Lato', sans-serif;
-    font-size: 20px;
-    color: #FFFFFF;
-    background-color: #5C6BC0; 
-    text-align: center;
-    transition: all 0.2s;
+  display: inline-block;
+  padding: 13px 18px;
+  margin: 0 0.1em 0.1em 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Do Hyeon', 'Roboto', 'Lato', sans-serif;
+  font-size: 20px;
+  color: #FFFFFF;
+  background-color: #5C6BC0; 
+  text-align: center;
+  transition: all 0.2s;
 }
 
 .btn-write:hover {
-    background-color: #FFFFFF;
-    border: 0.16em solid;
-    border-color: #5C6BC0;
-    color: #5C6BC0;
+  background-color: #FFFFFF;
+  border: 0.16em solid;
+  border-color: #5C6BC0;
+  color: #5C6BC0;
 }
 @media all and (max-width:30em){
-    .btn-write{
-        display:block;
-        margin:0.2em auto;
-    }
+  .btn-write{
+    display:block;
+    margin:0.2em auto;
+  }
 }
 
 #post-button {
-    display: inline-block;
-    padding: 13px 18px;
-    margin: 0 0.1em 0.1em 0;
-    border-radius: 5px;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: 'Do Hyeon', 'Roboto', 'Lato', sans-serif;
-    font-size: 17px;
-    color: #FFFFFF;
-    background-color: #5C6BC0; 
-    text-align: center;
-    transition: all 0.2s; 
+  display: inline-block;
+  padding: 13px 18px;
+  margin: 0 0.1em 0.1em 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Do Hyeon', 'Roboto', 'Lato', sans-serif;
+  font-size: 17px;
+  color: #FFFFFF;
+  background-color: #5C6BC0; 
+  text-align: center;
+  transition: all 0.2s; 
 }
 
 .form-group {
-    font-family: 'Do Hyeon', 'Nanum Gothic', 'Roboto', 'Lato', sans-serif;
-    font-size: 21px;
-    padding: 30px;
+  font-family: 'Do Hyeon', 'Nanum Gothic', 'Roboto', 'Lato', sans-serif;
+  font-size: 21px;
+  padding: 30px;
 }
 
 .Post__content {
-    font-family: 'Nanum Gothic', 'Roboto', 'Lato', sans-serif;
-    font-size: 18px;
+  font-family: 'Nanum Gothic', 'Roboto', 'Lato', sans-serif;
+  font-size: 18px;
 }
 
 /* footer */
 .Footer__App {
-    grid-area: footer;
-    place-self: center;
-    text-align: center;
+  grid-area: footer;
+  place-self: center;
+  text-align: center;
 }
 
 .Footer__App h3 {
-    color: #323440;
-    font-weight: 100;
+  color: #323440;
+  font-weight: 100;
 }
 
 .Layout__Wrapper {
-    display: grid;
-    grid-template-columns: 25% 50% 25% ;
-    grid-template-rows: 100px auto;
-    grid-template-areas:
-        "header search write"
-        ". form ."
-        ". articles ."
-        "footer footer footer";
-    row-gap: 80px;
+  display: grid;
+  grid-template-columns: 25% 50% 25% ;
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+    "header search write"
+    ". form ."
+    ". articles ."
+    "footer footer footer";
+  row-gap: 80px;
 }
