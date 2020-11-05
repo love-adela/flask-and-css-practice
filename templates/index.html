@@ -29,6 +29,25 @@
             <div class="header-write">
                 <button type="button" class="btn-write" onclick="postArticle()">글쓰기</button>
             </div>
+            <div class="Layout__Form">
+                <div class="Post__Form"> <!-- TODO: 기본적으로는 안 보이게 고칠 것-->
+                    <div>
+                        <div class="form-group">
+                            <label for="title">제목</label>
+                            <input id="post-title" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="subtitle">내용 요약</label>
+                            <textarea id="post-subtitle" type="text" rows="2"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="content">본문</label>
+                            <textarea id="post-content" type="text" rows="10"></textarea>
+                        </div>
+                        <button type="button" class="post-button" onclick="postArticle()" value="execute">게시하기</button>
+                    </div>
+                </div>
+            </div>
             <div class="Layout__Content" id="post-lc">
                 <ol class="Post__list">
                     {% for item in data %}
@@ -59,13 +78,25 @@
             );
 
             function postArticle() {
+                let title = $("#post-title").val();
+                let subtitle = $("#post-subtitle").val();
+                let content = $("#post-content").val();
+                
+                let post_data = {'title': title, 'subtitle': subtitle, 'content': content}
+
                 $.ajax({
                     type: "POST",
-                    url: "/articles",
-                    data: {},
+                    url: '{{ url_for("get_articles") }}',
+                    data: JSON.stringify(post_data),
+                    dataType: 'JSON',
+                    contentType: "application/json",
                     success: function (response) {
                         if (response["result"] == "success") {
-                            alert(response["msg"]);
+                            alert('성공! 데이터 값: ' + response.result_data['title'] + '\n' + response.result_data['subtitle']);
+                            // 성공시 페이지 새로고침
+                            window.location.reload();
+                        } else {
+                            alert("서버오류!")
                         }
                     }
                 })
