@@ -74,7 +74,6 @@
                     success: function (response) {
                         let title = $('#post-title').val('')
                         let subtitle = $('#post-subtitle').val('')
-                        let content = $('#post-content').val('')
                         window.location.reload();
                     }
                 })
@@ -90,20 +89,21 @@
                     success: function (response) {
                         let articles = response["articles"];
                         for (let i=0; i<articles.length; i++) {
-                            getPostList(articles[i]["title"], articles[i]["subtitle"], articles[i]["content"])
+                            getPostList(articles[i]["title"], articles[i]["subtitle"])
                         }
                     }
                 })
             }
 
-            function getPostList(title, subtitle, content) {
+            function getPostList(title, subtitle) {
                 let tempHtml = `<ol class="Post__list">
                                     <li class="Post__Wrapper">
                                         <a class="" href="#">
-                                            <h2 class="Post__title">${title}</h2>
-                                            <small class="Post__date">2020-11-03</small>
+                                            <div class="Post__title">
+                                                <h2 class="Post__title-h">${title}</h2>
+                                                <small class="Post__date">2020-11-03</small>
+                                            </div>
                                             <h4 class="Post__subtitle">${subtitle}</h4>
-                                            <p class="Post__content">${content}</p>
                                         </a>
                                     </li>
                                 </ol>`;
