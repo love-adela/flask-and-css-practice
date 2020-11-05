@@ -16,6 +16,7 @@ def get_articles():
 
 @app.route('/article', methods=['POST'])
 def post_articles():
+    # TODO: 제목이나 내용이 비어있으면 글쓰기 막고 400 Bad Request 반환해야함
     article = request.get_json()
     db.articles.insert_one(article)
     return jsonify({'result':'success'})
