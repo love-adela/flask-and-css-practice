@@ -1,115 +1,88 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+{% extends "base.html" %}
 
-        <title>아델라의 블로그</title>
-        <meta property="og:title" content="Blog for Adela" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://adela.love">
-        <meta property="og:description" content="아델라의 블로그입니다.">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/style.css') }}">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <div class="Layout__Wrapper">
-            <div class="header-name Nav__Item">
-                <div>
-                    <h1><a href="">love_adela</a></h1>
-                </div>
+{% block content %}
+<div class="Layout__Form">
+    <div class="Post__Form">
+        <div>
+            <div class="form-group">
+                <label for="title">제목</label>
+                <input id="post-title" type="text" placeholder="">
             </div>
-            <div class="header-search Nav__Item">
-                <label><input type="search" id="h-search" placeholder="게시물 검색은 여기에"></label>
-                <button id="hs-b">검색</button>
+            <div class="form-group">
+                <label for="subtitle">내용 요약</label>
+                <textarea id="post-subtitle" type="text" rows="2"></textarea>
             </div>
-            <div class="header-write">
-                <button type="button" class="btn-write" onclick="postArticle()">글쓰기</button>
+            <div class="form-group">
+                <label for="content">본문</label>
+                <textarea id="post-content" type="text" rows="10"></textarea>
             </div>
-            <div class="Layout__Form">
-                <div class="Post__Form"> <!-- TODO: 기본적으로는 안 보이게 고칠 것-->
-                    <div>
-                        <div class="form-group">
-                            <label for="title">제목</label>
-                            <input id="post-title" type="text" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="subtitle">내용 요약</label>
-                            <textarea id="post-subtitle" type="text" rows="2"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="content">본문</label>
-                            <textarea id="post-content" type="text" rows="10"></textarea>
-                        </div>
-                        <button type="button" class="post-button" onclick="postArticle()" value="execute">게시하기</button>
-                    </div>
-                </div>
-            </div>
-            <div class="Layout__Content" id="post-lc">
-            </div>
-            <footer class="Footer__App">
-                <h3>Copyright ©love_adela. All Rights Reserved.</h3>
-            </footer>
+            <button type="button" class="post-button" onclick="postArticle()" value="execute">게시하기</button>
         </div>
-        <script>
-            $(document).ready(function (){
-                $("#post-lc").html("");
-                getArticle();
-            });
+    </div>
+</div>
+<div class="Layout__Content" id="post-lc">
+</div>
+{% endblock %}
 
-            function postArticle() {
-                let title = $("#post-title").val();
-                let subtitle = $("#post-subtitle").val();
-                let content = $("#post-content").val();
-                
-                let post_data = {'title': title, 'subtitle': subtitle, 'content': content}
+{% block scripts %}
+{{ super() }}
+<script>
+    alert("왜 안 뜨니?")
+    $(document).ready(function (){
+        $("#post-lc").html("");
+        getArticle();
+    });
 
-                $.ajax({
-                    type: "POST",
-                    url: '{{ url_for("get_articles") }}',
-                    data: JSON.stringify(post_data),
-                    dataType: 'JSON',
-                    contentType: "application/json",
-                    success: function (response) {
-                        let title = $('#post-title').val('')
-                        let subtitle = $('#post-subtitle').val('')
-                        window.location.reload();
-                    }
-                })
-            }
-
-            function getArticle() {
-                $.ajax({
-                    type: "GET",
-                    url: '{{ url_for("get_articles") }}',
-                    data: {},
-                    dataType: 'JSON',
-                    contentType: "application/json",
-                    success: function (response) {
-                        let articles = response["articles"];
-                        for (let i=0; i<articles.length; i++) {
-                            getPostList(articles[i]["title"], articles[i]["subtitle"])
-                        }
-                    }
-                })
-            }
-
-            function getPostList(title, subtitle) {
-                let tempHtml = `<ol class="Post__list">
-                                    <li class="Post__Wrapper">
-                                        <a class="" href="#">
-                                            <div class="Post__title">
-                                                <h2 class="Post__title-h">${title}</h2>
-                                                <small class="Post__date">2020-11-03</small>
-                                            </div>
-                                            <h4 class="Post__subtitle">${subtitle}</h4>
-                                        </a>
-                                    </li>
-                                </ol>`;
-                $("#post-lc").prepend(tempHtml);
-            }
+    function postArticle() {
+        let title = $("#post-title").val();
+        let subtitle = $("#post-subtitle").val();
+        let content = $("#post-content").val();
         
-        </script>
-    </body>
-</html>
+        let post_data = {'title': title, 'subtitle': subtitle, 'content': content}
+
+        $.ajax({
+            type: "POST",
+            url: '{{ url_for("get_articles") }}',
+            data: JSON.stringify(post_data),
+            dataType: 'JSON',
+            contentType: "application/json",
+            success: function (response) {
+                let title = $('#post-title').val('')
+                let subtitle = $('#post-subtitle').val('')
+                window.location.reload();
+            }
+        })
+    }
+
+    function getArticle() {
+        $.ajax({
+            type: "GET",
+            url: '{{ url_for("get_articles") }}',
+            data: {},
+            dataType: 'JSON',
+            contentType: "application/json",
+            success: function (response) {
+                let articles = response["articles"];
+                for (let i=0; i<articles.length; i++) {
+                    getPostList(articles[i]["title"], articles[i]["subtitle"])
+                }
+            }
+        })
+    }
+
+    function getPostList(title, subtitle) {
+        let tempHtml = `<ol class="Post__list">
+                            <li class="Post__Wrapper">
+                                <a class="" href="#">
+                                    <div class="Post__title">
+                                        <h2 class="Post__title-h">${title}</h2>
+                                        <small class="Post__date">2020-11-03</small>
+                                    </div>
+                                    <h4 class="Post__subtitle">${subtitle}</h4>
+                                </a>
+                            </li>
+                        </ol>`;
+        $("#post-lc").prepend(tempHtml);
+    }
+</script>
+{% endblock %}
