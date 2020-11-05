@@ -12,7 +12,7 @@ def index():
 @app.route('/article', methods=['GET'])
 def get_articles():
     result = list(db.articles.find({}, {'_id':0}))
-    return jsonify({'result':'success', 'msg':'GET 연결되었습니다!', 'articles': result})
+    return jsonify({'result':'success', 'articles': result})
 
 @app.route('/article', methods=['POST'])
 def post_articles():
