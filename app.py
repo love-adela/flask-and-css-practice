@@ -1,9 +1,9 @@
+from datetime import datetime
 from flask import Flask, render_template, jsonify, request
-app = Flask(__name__)
-
 from pymongo import MongoClient
-client = MongoClient('localhost', 27017)
-db = client.dbBlog
+
+app = Flask(__name__)
+db = MongoClient('localhost', 27017).dbBlog
 
 @app.route('/')
 def index():
@@ -25,6 +25,9 @@ def post_articles():
     # 제목, 부제, 내용 중 하나가 비어있을 경우, 400 Bad Reqeust 반환
     if not (article['title'] and article['subtitle'] and article['content']):
         return jsonify({'result':'failed'}), 400
+
+    # 생성된 날짜 기록
+    article['created_at'] = datetime.utcnow()
 
     db.articles.insert_one(article)
     return jsonify({'result':'success'})

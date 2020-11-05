@@ -21,13 +21,14 @@ fetch('{{ url_for("get_articles") }}')
 .then(data => {
   let html = ''
   for (const article of data.articles) {
+    const createdAt = new Date(article.created_at)
     html = `
       <ol class="Post__list">
         <li class="Post__Wrapper">
           <a class="" href="#">
             <div class="Post__title">
               <h2 class="Post__title-h">${article.title}</h2>
-              <small class="Post__date">2020-11-03</small>
+              <small class="Post__date">${createdAt.toLocaleDateString('ko-KR')}</small>
             </div>
             <h4 class="Post__subtitle">${article.subtitle}</h4>
           </a>
