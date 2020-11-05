@@ -74,13 +74,10 @@
                     dataType: 'JSON',
                     contentType: "application/json",
                     success: function (response) {
-                        if (response["result"] == "success") {
-                            alert('성공! 데이터 값: ' + response.result_data['title'] + '\n' + response.result_data['subtitle']);
-                            // 성공시 페이지 새로고침
-                            window.location.reload();
-                        } else {
-                            alert("서버오류!")
-                        }
+                        let title = $('#post-title').val('')
+                        let subtitle = $('#post-subtitle').val('')
+                        let content = $('#post-content').val('')
+                        window.location.reload();
                     }
                 })
             }
