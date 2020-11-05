@@ -47,6 +47,7 @@ function postArticle() {
     location.href = '{{ url_for("index") }}'
   })
   .catch(error => {
+    // TODO: 실패한 이유 적절하게 유저들에게 표시
     console.error(error)
   })
 }
