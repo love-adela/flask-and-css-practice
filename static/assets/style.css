@@ -175,10 +175,27 @@ ol, ul {
     padding: 30px;
 }
 
+.Post__content {
+    font-family: 'Nanum Gothic', 'Roboto', 'Lato', sans-serif;
+    font-size: 21px;
+}
+
+/* footer */
+.Footer__App {
+    grid-area: footer;
+    place-self: center;
+    text-align: center;
+}
+
+.Footer__App h3 {
+    color: #323440;
+    font-weight: 100;
+}
+
 .Layout__Wrapper {
     display: grid;
     grid-template-columns: 25% 50% 25% ;
-    grid-template-rows: 100px auto 100px;
+    grid-template-rows: 100px auto;
     grid-template-areas:
         "header search write"
         ". form ."
