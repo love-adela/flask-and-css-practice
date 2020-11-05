@@ -9,12 +9,12 @@ db = client.dbBlog
 def index():
     return render_template('index.html')
 
-@app.route('/article', methods=['GET'])
+@app.route('/api/article', methods=['GET'])
 def get_articles():
     result = list(db.articles.find({}, {'_id':0}))
     return jsonify({'result':'success', 'articles': result})
 
-@app.route('/article', methods=['POST'])
+@app.route('/api/article', methods=['POST'])
 def post_articles():
     # TODO: 제목이나 내용이 비어있으면 글쓰기 막고 400 Bad Request 반환해야함
     article = request.get_json()
