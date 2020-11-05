@@ -12,14 +12,11 @@
   list-style-type: none;
   margin-bottom: 30px;
   padding: 30px 100px 30px 100px;
+  border-radius: 15px;
 }
 
 .Post__Wrapper:hover {
   background-color: #fbfbfb;
-  border: 0.16em solid;
-  border-color: #fbfbfb;
-  border-radius: 15px;
-  padding: 30px 100px 30px 100px;
 }
 
 .Post__title {
