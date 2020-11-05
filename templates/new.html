@@ -25,15 +25,16 @@ new.css
 {% block scripts %}
 <script>
 function postArticle() {
-  const title = $('#post-title').val()
-  const subtitle = $('#post-subtitle').val()
-  const content = $('#post-content').val()
-  const body = JSON.stringify({ title, subtitle, content })
-
   fetch('{{ url_for("get_articles") }}', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      title: $('#post-title').val(),
+      subtitle: $('#post-subtitle').val(),
+      content: $('#post-content').val()
+    })
   })
   .then(response => response.json())
   .then(data => {
