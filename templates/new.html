@@ -28,21 +28,19 @@ function postArticle() {
   const title = $('#post-title').val()
   const subtitle = $('#post-subtitle').val()
   const content = $('#post-content').val()
-  const post_data = { title, subtitle, content }
+  const body = JSON.stringify({ title, subtitle, content })
 
-  $.ajax({
-    type: 'POST',
-    url: '{{ url_for("get_articles") }}',
-    data: JSON.stringify(post_data),
-    dataType: 'JSON',
-    contentType: 'application/json',
-    success: function (response) {
-      $('#post-title').val('')
-      $('#post-subtitle').val('')
-      $('#post-content').val()
-
-      location.href = '{{ url_for("index") }}'
-    }
+  fetch('{{ url_for("get_articles") }}', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body
+  })
+  .then(response => response.json())
+  .then(data => {
+    location.href = '{{ url_for("index") }}'
+  })
+  .catch(error => {
+    console.error(error)
   })
 }
 </script>

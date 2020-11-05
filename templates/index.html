@@ -12,9 +12,9 @@ index.css
 <script>
 fetch('{{ url_for("get_articles") }}')
 .then(response => response.json())
-.then(response => {
+.then(data => {
   let html = ''
-  for (const article of response.articles) {
+  for (const article of data.articles) {
     html = `
       <ol class="Post__list">
         <li class="Post__Wrapper">
