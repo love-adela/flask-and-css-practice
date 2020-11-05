@@ -7,7 +7,7 @@ db = client.dbBlog
 
 @app.route('/')
 def index():
-    return render_template('base.html')
+    return render_template('index.html')
 
 @app.route('/article', methods=['GET'])
 def get_articles():

@@ -25,9 +25,7 @@
 {% endblock %}
 
 {% block scripts %}
-{{ super() }}
 <script>
-    alert("왜 안 뜨니?")
     $(document).ready(function (){
         $("#post-lc").html("");
         getArticle();
