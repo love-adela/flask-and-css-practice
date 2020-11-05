@@ -1,43 +1,35 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta property="og:title" content="Blog for Adela" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://adela.love">
-        <meta property="og:description" content="아델라의 블로그입니다.">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/style.css') }}">
+<head>
+  <meta charset="utf-8">
+  <title>{% if title %}{{ title }} | {% endif %}아델라의 블로그</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta property="og:title" content="Blog for Adela" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://adela.love">
+  <meta property="og:description" content="아델라의 블로그입니다.">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/style.css') }}">
+</head>
 
-        {% if title %}
-        <title>{{ title }} | 아델라의 블로그</title>
-        {% else %}
-        <title>아델라의 블로그</title>
-        {% endif %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-    <body>
-        <div class="Layout__Wrapper">
-            <div class="header-name Nav__Item">
-                <div>
-                    <h1><a href="">love_adela</a></h1>
-                </div>
-            </div>
-            <div class="header-search Nav__Item">
-                <label><input type="search" id="h-search" placeholder="게시물 검색은 여기에"></label>
-                <button id="hs-b">검색</button>
-            </div>
-            <div class="header-write">
-                <button type="button" class="btn-write" onclick="postArticle()">글쓰기</button>
-            </div>
-            {% block content %}
-            {% endblock %}
-        </div>
-        <footer class="Footer__App">
-            <h3>Copyright ©love_adela. All Rights Reserved.</h3>
-        </footer>
-        {% block scripts %}
-        {% endblock %}
-    </body>
-</html>
+<div class="Layout__Wrapper">
+  <div class="header-name Nav__Item">
+    <!-- TODO: Add link -->
+    <h1><a href="">love_adela</a></h1>
+  </div>
+  <div class="header-search Nav__Item">
+    <input type="search" id="h-search" placeholder="게시물 검색은 여기에">
+    <button id="hs-b">검색</button>
+  </div>
+  <div class="header-write">
+    <button class="btn-write" onclick="postArticle()">글쓰기</button>
+  </div>
+  {% block content %}
+  {% endblock %}
+</div>
+<footer class="Footer__App">
+  <h3>Copyright ©love_adela. All Rights Reserved.</h3>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% block scripts %}
+{% endblock %}
