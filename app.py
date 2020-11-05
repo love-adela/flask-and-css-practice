@@ -15,12 +15,7 @@ def get_articles():
 
 @app.route('/article', methods=['POST'])
 def post_articles():
-    # TODO: 1.클라이언트로부터 데이터 받기
     data = request.get_json()
-    
-    # article = {'title': title, 'subtitle': subtitle, 'content': content}
-    # TODO: 2.mongoDB에 데이터 넣기
-    # db.articles.insert_one(article)
     return jsonify({'result':'success', 'result_data': data})
 
 if __name__ == '__main__':
