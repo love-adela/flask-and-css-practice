@@ -212,9 +212,9 @@ ol, ul {
   grid-template-columns: 25% 50% 25% ;
   grid-template-rows: 100px auto;
   grid-template-areas:
-    "header search write"
-    ". form ."
-    ". articles ."
-    "footer footer footer";
+    'header search write'
+    '. form .'
+    '. articles .'
+    'footer footer footer';
   row-gap: 80px;
 }
