@@ -11,7 +11,13 @@ index.css
 {% block scripts %}
 <script>
 fetch('{{ url_for("get_articles") }}')
-.then(response => response.json())
+.then(response => {
+  if (response.ok) {
+    return response.json()
+  } else {
+    throw new Error(response)
+  }
+})
 .then(data => {
   let html = ''
   for (const article of data.articles) {
@@ -30,6 +36,9 @@ fetch('{{ url_for("get_articles") }}')
     ${html}`
   }
   document.getElementById('post-lc').innerHTML = html
+})
+.catch(error => {
+  console.error(error)
 })
 </script>
 {% endblock %}

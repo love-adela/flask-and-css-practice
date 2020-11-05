@@ -36,7 +36,13 @@ function postArticle() {
       content: $('#post-content').val()
     })
   })
-  .then(response => response.json())
+  .then(response => {
+    if (response.ok) {
+      response.json()
+    } else {
+      throw new Error(response)
+    }
+  })
   .then(data => {
     location.href = '{{ url_for("index") }}'
   })
