@@ -23,7 +23,7 @@ def post_articles():
     article = request.get_json()
 
     # 제목, 부제, 내용 중 하나가 비어있을 경우, 400 Bad Reqeust 반환
-    if not (article['title'] and article['subtitle'] and article['content']):
+    if not (article['title'] and article['enTitle'] and article['subtitle'] and article['content']):
         return jsonify({'result':'failed'}), 400
 
     # 생성된 날짜 기록
