@@ -32,5 +32,14 @@ def post_articles():
     db.articles.insert_one(article)
     return jsonify({'result':'success'})
 
+    
+@app.route('/api/article/<int:year>/<int:month>/<int:date>/<enTitle>', methods=['GET'])
+def get_detail_article(year, month, date, enTitle):
+    return {'year': year, 'month':month, 'date':date, 'enTitle':enTitle}
+
+# TODO: Update
+
+# TODO: Delete
+
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
